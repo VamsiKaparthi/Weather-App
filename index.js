@@ -15,4 +15,10 @@ let getWeather = async (location) => {
     console.log(err);
   }
 };
-getWeather("Ggn");
+
+document.getElementById("submit").addEventListener("click", (e) => {
+  e.preventDefault();
+  let location = document.getElementById("location").value;
+  getWeather(location);
+  document.getElementById("location").value = "";
+});
