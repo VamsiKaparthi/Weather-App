@@ -10,15 +10,39 @@ let getWeather = async (location) => {
       throw new Error("Enter a real place");
     }
     let finalResponse = await intialResponse.json();
-    console.log(finalResponse);
+    return finalResponse;
   } catch (err) {
-    console.log(err);
+    return "error";
   }
 };
-
-document.getElementById("submit").addEventListener("click", (e) => {
+let buildWeather = (weather) => {
+  if (weather != "error") {
+    //current temp
+    let currentTemp = weather.current.feelslike_c;
+    let currentTempDom = document.querySelector(".current-temp");
+    currentTempDom.innerHTML = `${currentTemp}°C`;
+    //current wind
+    let windDirection = weather.current.wind_dir;
+    let windSpeed = weather.current.wind_kph;
+    let windDom = document.querySelector(".current-wind");
+    if (windDirection == "N") {
+      windDirection = "North";
+    } else if (windDirection == "S") {
+      windDirection = "South";
+    } else if (windDirection == "W") {
+      windDirection = "West";
+    } else if (windDirection == "E") {
+      windDirection = "East";
+    }
+    windDom.innerHTML = `${windDirection}  ${windSpeed}km/h`;
+  }
+};
+document.getElementById("submit").addEventListener("click", async (e) => {
   e.preventDefault();
   let location = document.getElementById("location").value;
-  getWeather(location);
+  let weather = await getWeather(location);
+  console.log(weather);
+  buildWeather(weather);
+  console.log(weather.location.name);
   document.getElementById("location").value = "";
 });

@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   background-color: grey;
-  background-image: url(rain1.jpg);
+  background-image: url(rain3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -18,7 +18,7 @@ body {
   border-radius: 10px;
   display: grid;
   height: 85vh;
-  width: min(85vw, 1300px);
+  width: min(85vw, 1200px);
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
 }
@@ -40,6 +40,7 @@ input {
   width: 100%;
   color: white;
 }
+
 .currentMain {
   margin-top: 40px;
   color: white;
@@ -47,18 +48,41 @@ input {
   padding: 20px;
 }
 .current-temp {
-  font-size: 5rem;
+  font-size: 4.5rem;
 }
 .current-wind {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   width: 100%;
   display: flex;
   justify-content: center;
   color: rgba(255, 255, 255, 0.5);
-  margin-top: 10px;
-  margin-bottom: 40px;
+  margin-top: 15px;
+  margin-bottom: 35px;
 }
 .bottom-bar {
   grid-area: 2/1/3/2;
   background-color: rgba(255, 255, 255, 0.14);
+}
+.main {
+  grid-area: 1/1/2/2;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  background-image: url(rain3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.location {
+  font-size: min(70px, 10vw);
+}
+.condition {
+  font-size: 90px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.date {
+  color: rgba(255, 255, 255, 0.5);
 }
