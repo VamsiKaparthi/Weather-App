@@ -6,13 +6,19 @@
     <title>Document</title>
     <script src="index.js" defer></script>
     <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tektur&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <div class="main">
         <div style="display: flex; flex-direction: column; align-items: end">
           <div class="location">London</div>
-          <div class="date">2023-07-21 09:00</div>
+          <div class="date">2023-07-21 21:23</div>
         </div>
         <div class="condition">Rainy</div>
       </div>
@@ -23,6 +29,7 @@
             id="location"
             name="location"
             placeholder="Location"
+            autocomplete="off"
           />
           <button type="submit" id="submit" hidden>Submit</button>
           <div class="error"></div>
@@ -31,7 +38,34 @@
           <div class="current-temp">11°C</div>
           <div class="current-wind">West 19.1kph</div>
         </div>
-        <div class="forecast"></div>
+        <div class="forecast">
+          <span style="margin-bottom: 10px; font-size: min(25px)"
+            >Forecast</span
+          >
+          <div class="ahead">
+            <div class="aheadDiv">
+              <img
+                id="forecastImg"
+                class="forecastImage"
+                alt="for"
+                style="
+                  height: 100%;
+                  width: auto;
+                  background-color: rgba(255, 255, 255, 0.1);
+                  border-radius: 5px;
+                "
+              />
+              <div class="details">
+                <span>2023-07-21</span>
+                <span>Rainy</span>
+              </div>
+              <div class="extremes">
+                <span>9°</span>
+                <span>16°</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="bottom-bar"></div>
     </div>

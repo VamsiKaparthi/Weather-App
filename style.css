@@ -1,20 +1,24 @@
 body {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   background-color: grey;
   background-image: url(rain3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+
+  font-family: "Tektur", cursive;
 }
 
 .container {
   background: rgba(255, 255, 255, 0.001);
-  backdrop-filter: blur(5px);
-  border: 10px solid rgba(255, 255, 255, 0.15);
+  border: 10px solid rgba(255, 255, 255, 0.25);
   border-radius: 10px;
   display: grid;
   height: 85vh;
@@ -23,16 +27,16 @@ body {
   grid-template-rows: 2fr 1fr;
 }
 .sidebar {
-  grid-column: 2/3;
-  grid-row: 1/3;
-  background-color: rgba(255, 255, 255, 0.1);
+  grid-area: 1/2/3/3;
+  background-color: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 input {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.15);
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 5px;
@@ -40,24 +44,29 @@ input {
   width: 100%;
   color: white;
 }
-
+input:-webkit-autofill {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: red;
+}
 .currentMain {
   margin-top: 40px;
   color: white;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding: 20px;
+  width: 80%;
 }
 .current-temp {
-  font-size: 4.5rem;
+  font-size: min(7vw, 110px);
+  display: flex;
+  justify-content: center;
 }
 .current-wind {
-  font-size: 1.4rem;
+  font-size: min(2.5vw, 25px);
   width: 100%;
   display: flex;
   justify-content: center;
   color: rgba(255, 255, 255, 0.5);
-  margin-top: 15px;
-  margin-bottom: 35px;
+  margin-top: 10px;
 }
 .bottom-bar {
   grid-area: 2/1/3/2;
@@ -77,12 +86,43 @@ input {
   background-attachment: fixed;
 }
 .location {
-  font-size: min(70px, 10vw);
+  font-size: min(60px, 8vw);
 }
 .condition {
-  font-size: 90px;
+  font-size: min(8vw, 100px);
   color: rgba(255, 255, 255, 0.5);
 }
 .date {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
+}
+.forecast {
+  margin-top: 10px;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ahead {
+  width: 100%;
+}
+.aheadDiv {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5vw;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+}
+.extremes {
+  display: flex;
+  flex-direction: column;
 }
