@@ -65,7 +65,7 @@ let forecastHourFunction = (weather) => {
     div.classList.add("timeDiv");
     div.innerHTML = `<span>${index}:00</span>
     <img src="${condition}" alt="con" />
-    <span>${temp}</span>`;
+    <span>${temp}°C</span>`;
     timeForecast.appendChild(div);
   }
 };

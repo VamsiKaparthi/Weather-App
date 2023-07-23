@@ -8,11 +8,11 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: grey;
-  background-image: url(rain3.jpg);
+  background-image: url(rain5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
+  background-position: center top -200px;
   font-family: "Tektur", cursive;
 }
 
@@ -22,13 +22,13 @@ body {
   border-radius: 10px;
   display: grid;
   height: 85vh;
-  width: min(85vw, 1200px);
+  width: min(85vw, 1000px);
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
 }
 .sidebar {
   grid-area: 1/2/3/3;
-  background-color: rgba(255, 255, 255, 0.01);
+  background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   padding: 20px;
   display: flex;
@@ -81,10 +81,11 @@ input:-webkit-autofill {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  background-image: url(rain3.jpg);
+  background-image: url(rain5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center top -200px;
 }
 .location {
   font-size: min(60px, 8vw);
