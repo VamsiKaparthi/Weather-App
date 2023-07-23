@@ -1,7 +1,7 @@
 let getWeather = async (location) => {
   try {
     let intialResponse = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=2b154870f8384801844114653231607&q=${location}&days=3&aqi=yes&alerts=no`,
+      `https://api.weatherapi.com/v1/forecast.json?key=2b154870f8384801844114653231607&q=${location}&days=3&aqi=yes&alerts=no`,
       {
         mode: "cors",
       }
