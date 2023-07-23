@@ -9,11 +9,15 @@ let getWeather = async (location) => {
     if (!intialResponse.ok) {
       throw new Error("Enter a real place");
     }
+    document.querySelector(".error").innerHTML = "<br>";
     let finalResponse = await intialResponse.json();
     return finalResponse;
   } catch (err) {
-    return "error";
+    errorFun(err);
   }
+};
+let errorFun = (err) => {
+  document.querySelector(".error").innerHTML = err;
 };
 let buildWeather = (weather) => {
   if (weather != "error") {
