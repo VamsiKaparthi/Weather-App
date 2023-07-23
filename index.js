@@ -38,8 +38,44 @@ let buildWeather = (weather) => {
     conditionDom.innerHTML = condition;
 
     //forecast details
+    forecastDayFunction(weather);
     console.log(weather.forecast.forecastday[2].day.condition.text);
-    document.getElementById("forecastImg").src = weather.current.condition.icon;
+    //document.getElementById("forecastImg").src = weather.current.condition.icon;
+  }
+};
+let forecastDayFunction = (weather) => {
+  const array = weather.forecast.forecastday;
+  const ahead = document.querySelector(".ahead");
+  ahead.innerHTML = "";
+  for (let index = 1; index < 3; index++) {
+    const element = array[index];
+    let icon = element.day.condition.icon;
+    let date = element.date;
+    let condition = element.day.condition.text;
+    let div = document.createElement("div");
+    div.classList.add("aheadDiv");
+    div.innerHTML = `<img
+    id="forecastImg-${index}"
+    class="forecastImage"
+    alt="for"
+    style="
+      height: auto;
+      width: 25%;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    "
+  />
+  <div class="details">
+    <span>${date}</span>
+    <span>${condition}</span>
+  </div>
+  <div class="extremes">
+    <span>9°</span>
+    <span>16°</span>
+  </div>`;
+
+    ahead.appendChild(div);
+    document.getElementById(`forecastImg-${index}`).src = icon;
   }
 };
 let windDirectionStringify = (windDirection) => {
