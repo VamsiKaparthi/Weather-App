@@ -69,7 +69,9 @@ input:-webkit-autofill {
 }
 .bottom-bar {
   grid-area: 2/1/3/2;
-  background-color: rgba(255, 255, 255, 0.14);
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: hidden;
 }
 .main {
   grid-area: 1/1/2/2;
@@ -128,4 +130,51 @@ input:-webkit-autofill {
 .extremes {
   display: flex;
   flex-direction: column;
+}
+.timeForecast {
+  border-top: 5px solid rgba(255, 255, 255, 0.1);
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+}
+.timeDiv {
+  height: 80%;
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  justify-content: space-between;
+}
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Set the color of the scrollbar handle */
+  border-radius: 5px; /* Rounded corners for the scrollbar handle */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Set the color of the scrollbar track */
 }

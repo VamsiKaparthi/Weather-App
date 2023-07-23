@@ -44,8 +44,29 @@ let buildWeather = (weather) => {
 
     //forecast details
     forecastDayFunction(weather);
-    console.log(weather.forecast.forecastday[2].day.condition.text);
-    //document.getElementById("forecastImg").src = weather.current.condition.icon;
+    forecastHourFunction(weather);
+  }
+};
+let forecastHourFunction = (weather) => {
+  let timeForecast = document.querySelector(".timeForecast");
+  timeForecast.innerHTML = "";
+  let time = weather.location.localtime;
+  let forecastArr = weather.forecast.forecastday[0].hour;
+  console.log(forecastArr);
+  time = time.split(" ");
+  let timeArr = time[1].split(":");
+  let hour = timeArr[0];
+  let interval = 24 - hour;
+  for (let index = hour; index < 24; index++) {
+    let div = document.createElement("div");
+    let element = forecastArr[index];
+    let condition = element.condition.icon;
+    let temp = element.temp_c;
+    div.classList.add("timeDiv");
+    div.innerHTML = `<span>${index}:00</span>
+    <img src="${condition}" alt="con" />
+    <span>${temp}</span>`;
+    timeForecast.appendChild(div);
   }
 };
 let forecastDayFunction = (weather) => {
