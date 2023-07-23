@@ -74,6 +74,7 @@ input:-webkit-autofill {
   box-sizing: border-box;
   padding: 20px;
   overflow: hidden;
+  color: white;
 }
 .main {
   grid-area: 1/1/2/2;
