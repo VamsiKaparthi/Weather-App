@@ -82,6 +82,8 @@ let forecastDayFunction = (weather) => {
     let icon = element.day.condition.icon;
     let date = element.date;
     let condition = element.day.condition.text;
+    let mintemp = element.day.mintemp_c;
+    let maxtemp = element.day.maxtemp_c;
     let div = document.createElement("div");
     div.classList.add("aheadDiv");
     div.innerHTML = `<img
@@ -100,8 +102,8 @@ let forecastDayFunction = (weather) => {
     <span>${condition}</span>
   </div>
   <div class="extremes">
-    <span>9°</span>
-    <span>16°</span>
+    <span>${mintemp}°</span>
+    <span>${maxtemp}°</span>
   </div>`;
 
     ahead.appendChild(div);

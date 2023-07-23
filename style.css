@@ -12,7 +12,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center top -200px;
+
   font-family: "Tektur", cursive;
 }
 
@@ -87,7 +87,6 @@ input:-webkit-autofill {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center top -200px;
 }
 .location {
   font-size: min(60px, 8vw);
