@@ -57,7 +57,7 @@ input:-webkit-autofill {
   width: 80%;
 }
 .current-temp {
-  font-size: min(7vw, 110px);
+  font-size: min(7vw, 80px);
   display: flex;
   justify-content: center;
 }
