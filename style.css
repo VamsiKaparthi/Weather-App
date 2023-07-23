@@ -95,6 +95,7 @@ input:-webkit-autofill {
 .condition {
   font-size: min(8vw, 100px);
   color: rgba(255, 255, 255, 0.5);
+  text-align: end;
 }
 .date {
   color: rgba(255, 255, 255, 1);
