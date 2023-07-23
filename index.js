@@ -37,6 +37,11 @@ let buildWeather = (weather) => {
     let conditionDom = document.querySelector(".condition");
     conditionDom.innerHTML = condition;
 
+    let time = weather.location.localtime;
+    time = time.split(" ");
+    let timeDom = document.querySelector(".date");
+    timeDom.innerHTML = `${time[1]}&nbsp&nbsp&nbsp&nbsp${time[0]}`;
+
     //forecast details
     forecastDayFunction(weather);
     console.log(weather.forecast.forecastday[2].day.condition.text);
